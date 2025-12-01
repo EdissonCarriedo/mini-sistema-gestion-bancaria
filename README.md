@@ -1,2 +1,2 @@
 # mini-sistema-gestion-bancaria
-mini sistema de gestion bancaria en PYTHON
+Mini sitema de gestión bancaria
