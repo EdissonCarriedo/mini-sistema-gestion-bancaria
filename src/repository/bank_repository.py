@@ -5,15 +5,15 @@ DATA_FILE = "data.json"
 
 def cargar_datos():
     try:
-        with open(DATA_FILE, "r") as f:
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
         return {"usuarios": {}, "cuentas": {}}
 
 
 def guardar_datos(data):
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 def login(data, pin):

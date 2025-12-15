@@ -2,15 +2,27 @@
 import getpass
 from repository.bank_repository import *
 
-def main():
-    # el getpass oculta la entrada del usuario en la terminal
-    pin = getpass.getpass("Ingrese su PIN: ")
-    pin2 = int(input("Ingrese su PIN (input normal): "))
-    print(f"PIN ingresado: {pin}")
-    print(f"PIN ingresado (input normal): {pin2}")
+def get_user_by_dni(dni,data):
+    for user in data["users"].values():
+        if dni == user["dni"]:
+            return user
+        else:
+            return None
 
+def main():
+    # simulacion de entrada
     data = cargar_datos()
-    print(data)
+    dni_input = "12345678X"
+    usuario = get_user_by_dni(dni_input, data)
+    print(usuario["dni"])
+    
+
+
+
+
+
+    # data = cargar_datos()
+    # print(data)
 
 if __name__ == "__main__":
     main()
