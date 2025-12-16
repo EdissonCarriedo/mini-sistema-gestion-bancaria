@@ -24,13 +24,19 @@ def get_balance(accounts):
         i += 1
     user_input = input("Cuenta seleccionada: ")
     selected_account = accounts[int(user_input) - 1]
-    print(f"Cuenta seleccionada, {selected_account['account_number']}, Su saldo es de: {selected_account['saldo']}")
+    return selected_account['saldo']
 # TODO:Devolvera una cuenta(objeto), account es una lista y select_account
 def select_account(accounts, selected_account):
-    pass
+    l = 1
+    for a in accounts:
+        l +=1
+    return
 #TODO: lo mismo que ingresar pero restando xD 
 def cash_out(account, quantity):
-    pass
+    for c in account:
+        print (c['saldo'])
+    quantity = input("Que cantidad desea retirar: ")
+    quantity -= c['saldo']
 
 
 
