@@ -1,61 +1,49 @@
-
-import getpass
-from repository.bank_repository import *
-
-def get_user_by_dni(dni,data):
-    for user in data["users"].values():
-        if dni == user["dni"]:
-            return user
-    return None
-
-def get_account_by_id (id,data):
-    account_list = []
-    for account in data["accounts"].values():
-        if id == account["id_user"]:
-            account_list.append(account)
-    return account_list
-
-def get_balance():
-
-
-
+from repository import bank_repository as BankRepository
+from view import menu as Menu
+from utils.constants import *
 
 def main():
     # simulacion de entrada
-    data = cargar_datos()
+    data = BankRepository.cargar_datos()
     dni_input = "12345678X"
 
-    usuario = get_user_by_dni(dni_input, data)
-    id_user = usuario["id_user"]
-    account = get_account_by_id(id_user, data)
-
-    print(usuario["dni"])
-    print(account)
-
-    # esto es vista
-    print("seleccione una cuenta: ")
-
-    i = 1
-    for a in account:
-        print(f"{i}. {a['account_number']}")
-        i += 1
-    user_input = input("Cuenta seleccionada: ")
-    print(int(user_input) - 1)
-    # print(account[int(user_input) - 1])
-    selected_account = account[int(user_input) - 1]
-    print(selected_account)
-
+    user = BankRepository.get_user_by_dni(dni_input, data)
+    accounts = BankRepository.get_account_by_id(user["id_user"], data)
     
-    quantity = 10000
-    deposit_money(data, selected_account, quantity)
+    option_menu = int(Menu.show_menu())
+    
+# 1) Consultar saldo
 
+    if option_menu == GET_BALANCE:
+        Menu.show_accounts(accounts)
+        selected_account = Menu.input_select_account()
+        account = BankRepository.select_account(accounts, selected_account)
+        Menu.show_balance(account)
 
+# 2) Ingresar dinero
+    elif option_menu == DEPOSIT:
+        Menu.show_accounts(accounts)
+        selected_account = Menu.input_select_account()
+        account = BankRepository.select_account(accounts, selected_account)
+        print(f"Cuenta seleccionada: {BankRepository.get_account_number(account)}")
+        quantity = Menu.input_deposit_money()
+        BankRepository.deposit_money(data, account, quantity)
+        Menu.show_balance(account)
 
+# 3) Retirar dinero
+    elif option_menu == WITHDRAW:
+        Menu.show_accounts(accounts)
+        selected_account = Menu.input_select_account()
+        account = BankRepository.select_account(accounts, selected_account)
+        print(f"Cuenta seleccionada: {BankRepository.get_account_number(account)}")
+        quantity = Menu.input_withdraw_cash()
+        BankRepository.withdraw_cash(data, account, quantity)
+        Menu.show_balance(account)
 
-
-
-    # data = cargar_datos()
-    # print(data)
-
+# 4) Salir
+    elif option_menu == EXIT:
+        user_name = BankRepository.get_user_name(user)
+        Menu.goodbye(user_name)
+        
 if __name__ == "__main__":
     main()

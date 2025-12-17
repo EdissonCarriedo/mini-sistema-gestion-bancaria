@@ -2,32 +2,32 @@
     "users": {
         "1": {
             "id_user": 1,
-            "nombre": "Victorino",
-            "apellido": "Fernández",
+            "name": "Victorino",
+            "surname": "Fernández",
             "dni": "12345678X"
         },
         "2": {
             "id_user": 2,
-            "nombre": "Daniel",
-            "apellido": "González",
+            "name": "Daniel",
+            "surname": "González",
             "dni": "87654321Y"
         },
         "3": {
             "id_user": 3,
-            "nombre": "Edisson",
-            "apellido": "Carriedo",
+            "name": "Edisson",
+            "surname": "Carriedo",
             "dni": "56789012Z"
         },
         "4": {
             "id_user": 4,
-            "nombre": "Lucía",
-            "apellido": "Martínez",
+            "name": "Lucía",
+            "surname": "Martínez",
             "dni": "23456789A"
         },
         "5": {
             "id_user": 5,
-            "nombre": "María",
-            "apellido": "Rodríguez",
+            "name": "María",
+            "surname": "Rodríguez",
             "dni": "34567890B"
         }
     },
@@ -37,35 +37,35 @@
             "id_user": 1,
             "account_number": "ES0001 0001 0000 0001 0000",
             "pin": 1111,
-            "saldo": 13500.0
+            "balance": 13500.0
         },
         "2": {
             "id_account": 2,
             "id_user": 2,
             "account_number": "ES0001 0001 0000 0002 0000",
             "pin": 2222,
-            "saldo": 2500.0
+            "balance": 2500.0
         },
         "3": {
             "id_account": 3,
             "id_user": 3,
             "account_number": "ES0001 0001 0000 0003 0000",
             "pin": 3333,
-            "saldo": 500.0
+            "balance": 500.0
         },
         "4": {
             "id_account": 4,
             "id_user": 4,
             "account_number": "ES0001 0001 0000 0004 0000",
             "pin": 4444,
-            "saldo": 1200.0
+            "balance": 1200.0
         },
         "5": {
             "id_account": 5,
             "id_user": 1,
             "account_number": "ES0001 0001 0000 0005 0000",
             "pin": 5555,
-            "saldo": 300.0
+            "balance": 50.5
         }
     }
 }
