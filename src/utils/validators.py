@@ -22,3 +22,16 @@ def validate_dni(dni):
     print(letra, letras[numero % 23])
     return letra == letras[numero % 23]
 
+def validate_amount(amount):
+    try:
+        amount = float(amount)
+    except (TypeError, ValueError):
+        return False
+
+    return amount > 0
+
+def validate_withdraw(amount, balance):
+    if not validate_amount(amount):
+        return False
+
+    return amount <= balance

@@ -63,11 +63,11 @@ def show_login():
 
 def input_deposit_money():
     print("\n")
-    return float(input("Introduzca la cantidad a ingresar: "))
+    return float(input("Introduzca la cantidad a ingresar: ").replace(",", "."))
 
 def input_withdraw_cash():
     print("\n")
-    return float(input("Introduzca la cantidad a retirar: "))
+    return float(input("Introduzca la cantidad a retirar: ").replace(",", "."))
 
 def goodbye(user_name):
     print("\n")
@@ -104,3 +104,26 @@ def dni_not_valid():
 
 def press_enter_to_continue():
     input("\nPulsa ENTER para volver al menú...")
+
+def invalid_amount():
+    print(
+            """
+    ----------------------------------------
+    IMPORTE NO VÁLIDO
+    ----------------------------------------
+    El importe debe ser un número positivo.
+    ----------------------------------------
+    """
+        )
+
+def insufficient_funds():
+    print(
+            """
+    ----------------------------------------
+    OPERACIÓN DENEGADA
+    ----------------------------------------
+    Fondos insuficientes para realizar
+    la operación solicitada.
+    ----------------------------------------
+    """
+        )

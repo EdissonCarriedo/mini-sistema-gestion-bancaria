@@ -41,13 +41,13 @@
             "id_account": 1,
             "id_user": 1,
             "account_number": "ES0001 0001 0000 0001 0000",
-            "balance": 14300.0
+            "balance": 14000.0
         },
         "2": {
             "id_account": 2,
             "id_user": 2,
             "account_number": "ES0001 0001 0000 0002 0000",
-            "balance": 2500.0
+            "balance": 2480.0
         },
         "3": {
             "id_account": 3,
@@ -65,7 +65,7 @@
             "id_account": 5,
             "id_user": 1,
             "account_number": "ES0001 0001 0000 0005 0000",
-            "balance": 14049.5
+            "balance": 0.0
         }
     }
 }

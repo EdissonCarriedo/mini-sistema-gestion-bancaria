@@ -37,7 +37,10 @@ def get_account_number(account):
     return account["account_number"]
 
 def select_account(accounts, selected_account):
-    return accounts[selected_account - 1]
+    index = selected_account - 1
+    if 0 <= index < len(accounts):
+        return accounts[index]
+    return None
 
 def withdraw_cash(data, account, quantity):
     account["balance"] -= quantity
