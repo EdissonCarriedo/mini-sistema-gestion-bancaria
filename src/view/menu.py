@@ -52,7 +52,7 @@ def show_login():
     """
         )
 
-    dni = input("DNI : ")
+    dni = input("DNI : ").strip().upper()
     pin = getpass.getpass("PIN : ")
 
     return dni, pin
