@@ -76,17 +76,28 @@ def main():
             Menu.show_accounts(accounts)
             account = select_account_safe(accounts)
 
-            valid_input = False
-            while not valid_input:
-                amount_input = Menu.input_withdraw_cash()
-                if validate_withdraw(amount_input, account["balance"]):
-                    amount = float(amount_input)
-                    BankRepository.withdraw_cash(data, account, amount)
-                    Menu.show_balance(account)
-                    Menu.press_enter_to_continue()
-                    valid_input = True
-                else:
-                    Menu.insufficient_funds()
+            if account["balance"] <= 0:
+                Menu.show_balance(account)
+                Menu.zero_funds()
+                Menu.press_enter_to_continue()
+            else:
+                valid_input = False
+                while not valid_input:
+                    amount_input = Menu.input_withdraw_cash()
+                    try:
+                        amount = float(amount_input)
+                    except ValueError:
+                        print("Ingrese un número válido.")
+                        continue
+
+                    if validate_withdraw(amount, account["balance"]):
+                        BankRepository.withdraw_cash(data, account, amount)
+                        Menu.show_balance(account)
+                        Menu.press_enter_to_continue()
+                        valid_input = True
+                    else:
+                        Menu.insufficient_funds()
+
 
         # 4) Salir
         elif option_menu == EXIT:

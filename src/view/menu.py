@@ -26,8 +26,16 @@ def show_accounts(accounts_list):
         i += 1
 
 def input_select_account():
-    print("\n")
-    return int(input("Seleccione una cuenta: "))
+    valid_input = False
+    selected_account = None
+    while not valid_input:
+        try:
+            print("\n")
+            selected_account = int(input("Seleccione una cuenta: "))
+            valid_input = True
+        except ValueError:
+            print("Error: por favor ingrese un número válido.")
+    return selected_account
 
 def show_balance(account):
     print(
@@ -58,12 +66,24 @@ def show_login():
     return dni, pin
 
 def input_deposit_money():
-    print("\n")
-    return float(input("Introduzca la cantidad a ingresar: ").replace(",", "."))
+    while True:
+        try:
+            entrada = input("\nIntroduzca la cantidad a ingresar: ")
+            entrada = entrada.replace(",", "")
+            cantidad = float(entrada)
+            return cantidad
+        except ValueError:
+            print("Error: por favor ingrese un número válido.")
 
 def input_withdraw_cash():
-    print("\n")
-    return float(input("Introduzca la cantidad a retirar: ").replace(",", "."))
+    while True:
+        try:
+            entrada = input("\nIntroduzca la cantidad a retirar: ")
+            entrada = entrada.replace(",", "")
+            cantidad = float(entrada)
+            return cantidad
+        except ValueError:
+            print("Error: por favor ingrese un número válido.")
 
 def goodbye(user_name):
     print("\n")
@@ -120,6 +140,16 @@ def insufficient_funds():
     ----------------------------------------
     Fondos insuficientes para realizar
     la operación solicitada.
+    ----------------------------------------
+    """
+        )
+
+def zero_funds():
+    print(
+            """
+    ----------------------------------------
+    La cuenta está a cero no se puede 
+    proceder con la operación.
     ----------------------------------------
     """
         )
