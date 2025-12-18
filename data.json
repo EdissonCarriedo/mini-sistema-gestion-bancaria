@@ -4,31 +4,36 @@
             "id_user": 1,
             "name": "Victorino",
             "surname": "Fernández",
-            "dni": "12345678X"
+            "dni": "34422334M",
+            "pin": "1111"
         },
         "2": {
             "id_user": 2,
             "name": "Daniel",
             "surname": "González",
-            "dni": "87654321Y"
+            "dni": "73978609Y",
+            "pin": "2222"
         },
         "3": {
             "id_user": 3,
             "name": "Edisson",
             "surname": "Carriedo",
-            "dni": "56789012Z"
+            "dni": "56789012B",
+            "pin": "3333"
         },
         "4": {
             "id_user": 4,
             "name": "Lucía",
             "surname": "Martínez",
-            "dni": "23456789A"
+            "dni": "46085910M",
+            "pin": "4444"
         },
         "5": {
             "id_user": 5,
             "name": "María",
             "surname": "Rodríguez",
-            "dni": "34567890B"
+            "dni": "41810985K",
+            "pin": "5555"
         }
     },
     "accounts": {
@@ -36,36 +41,31 @@
             "id_account": 1,
             "id_user": 1,
             "account_number": "ES0001 0001 0000 0001 0000",
-            "pin": 1111,
-            "balance": 13500.0
+            "balance": 14300.0
         },
         "2": {
             "id_account": 2,
             "id_user": 2,
             "account_number": "ES0001 0001 0000 0002 0000",
-            "pin": 2222,
             "balance": 2500.0
         },
         "3": {
             "id_account": 3,
             "id_user": 3,
             "account_number": "ES0001 0001 0000 0003 0000",
-            "pin": 3333,
             "balance": 500.0
         },
         "4": {
             "id_account": 4,
             "id_user": 4,
             "account_number": "ES0001 0001 0000 0004 0000",
-            "pin": 4444,
             "balance": 1200.0
         },
         "5": {
             "id_account": 5,
             "id_user": 1,
             "account_number": "ES0001 0001 0000 0005 0000",
-            "pin": 5555,
-            "balance": 50.5
+            "balance": 14049.5
         }
     }
 }
