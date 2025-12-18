@@ -19,7 +19,6 @@ def validate_dni(dni):
     letra = dni[8]
 
     letras = "TRWAGMYFPDXBNJZSQVHLCKE"
-    print(letra, letras[numero % 23])
     return letra == letras[numero % 23]
 
 def validate_amount(amount):

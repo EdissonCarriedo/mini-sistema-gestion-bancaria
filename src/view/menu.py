@@ -18,9 +18,6 @@ def show_menu():
         )
     return input("Operación seleccionada: ")
 
-
-
-
 def show_accounts(accounts_list):
     print("\n")
     i = 1
@@ -59,7 +56,6 @@ def show_login():
     pin = getpass.getpass("PIN : ")
 
     return dni, pin
-
 
 def input_deposit_money():
     print("\n")

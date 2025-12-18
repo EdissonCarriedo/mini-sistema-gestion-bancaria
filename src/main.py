@@ -42,7 +42,7 @@ def main():
             accounts = BankRepository.get_account_by_id(user["id_user"], data)
             Menu.hello(BankRepository.get_user_name(user))
 
-    # MENU PRINCIPAL
+    # MENU
     run = True
     while run:
         option_menu = input_menu_option()
