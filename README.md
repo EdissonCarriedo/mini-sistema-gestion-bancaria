@@ -18,24 +18,18 @@ Forma parte de un ejercicio práctico para reforzar conceptos fundamentales de P
 
 ## 📂 Estructura del proyecto
 
-MINI-SISTEMA-GESTION-BANCARIA/
-│
-├── src/
-│ ├── repository/
-│ │ └── bank_repository.py
-│ │
-│ ├── utils/
-│ │ ├── constants.py
-│ │ └── validators.py
-│ │
-│ ├── view/
-│ │ └── menu.py
-│ │
-│ └── main.py
-│
-├── data.json
-├── .gitignore
-└── README.md
+src/
+  repository/
+    bank_repository.py
+  utils/
+    constants.py
+    validators.py
+  view/
+    menu.py
+  main.py
+data.json
+.gitignore
+README.md
 
 
 ### Descripción de carpetas y archivos
