@@ -18,19 +18,27 @@ Forma parte de un ejercicio práctico para reforzar conceptos fundamentales de P
 
 ## 📂 Estructura del proyecto
 
-src/
-  repository/
-    bank_repository.py
-  utils/
-    constants.py
-    validators.py
-  view/
-    menu.py
-  main.py
-data.json
-.gitignore
-README.md
+```bash
+MINI-SISTEMA-GESTION-BANCARIA/
+│
+├── src/
+│ ├── repository/
+│ │ └── bank_repository.py
+│ │
+│ ├── utils/
+│ │ ├── constants.py
+│ │ └── validators.py
+│ │
+│ ├── view/
+│ │ └── menu.py
+│ │
+│ └── main.py
+│
+├── data.json
+├── .gitignore
+└── README.md
 
+```
 
 ### Descripción de carpetas y archivos
 
@@ -68,4 +76,4 @@ El sistema permite al usuario:
 
 ```bash
 python3 src/main.py
-```bash
+```
